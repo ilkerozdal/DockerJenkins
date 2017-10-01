@@ -40,7 +40,6 @@ public class Fenetre extends JFrame{
 		JPanel pan1 = new JPanel();
 		pan1.setLayout(new BorderLayout());
 		labPrenom = new JLabel("Donnez votre Prénom : ");
-		labPrenom.setForeground(Color.red);
 		champPrenom = new JTextField(30);
 		pan1.add(labPrenom,BorderLayout.WEST);
 		pan1.add(champPrenom,BorderLayout.EAST);
@@ -48,7 +47,6 @@ public class Fenetre extends JFrame{
 		JPanel pan2 = new JPanel();
 		pan2.setLayout(new BorderLayout());
 		labNom = new JLabel("Donnez votre Nom : ");
-		labNom.setForeground(Color.red);
 		champNom = new JTextField(20);
 		pan2.add(labNom,BorderLayout.WEST);
 		pan2.add(champNom,BorderLayout.EAST);
@@ -56,7 +54,6 @@ public class Fenetre extends JFrame{
 		JPanel pan3 = new JPanel();
 		pan3.setLayout(new BorderLayout());
 		labAge = new JLabel("Entrez votre âge : ");
-		labAge.setForeground(Color.red);
 		champAge = new JTextField(10);
 		pan3.add(labAge,BorderLayout.WEST);
 		pan3.add(champAge,BorderLayout.EAST);
