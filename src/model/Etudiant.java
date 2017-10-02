@@ -5,6 +5,7 @@ public class Etudiant {
 	private String prenom;
 	private String nom;
 	private int age;
+	private Formation formation;
 	
 	public Etudiant(String prenom,String nom,int age){
 		this.prenom = prenom;
@@ -26,6 +27,14 @@ public class Etudiant {
 
 	public String getNom() {
 		return nom;
+	}
+	
+	public Formation getFormation(){
+		return formation;
+	}
+	
+	public void setFormation(Formation formation){
+		this.formation = formation;
 	}
 	
 	@Override
