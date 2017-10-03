@@ -39,7 +39,14 @@ public class Etudiant {
 	
 	@Override
 	public String toString() {
-		String var = "My name is "+this.prenom+" "+this.nom+" and i'm "+this.age+" years old";
+		StringBuilder sb = new StringBuilder();
+		sb.append("PRENOM : "+this.prenom);
+		sb.append("\n");
+		sb.append("NOM : "+this.nom);
+		sb.append("\n");
+		sb.append("AGE : "+this.age);
+		String var = sb.toString();
+		System.out.println(var);
 		return var;
 	}
 }

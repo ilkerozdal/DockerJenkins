@@ -3,11 +3,13 @@ package view;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -15,6 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import model.Etudiant;
+import model.Formation;
 
 public class Fenetre extends JFrame{
 
@@ -30,6 +33,8 @@ public class Fenetre extends JFrame{
 	private JButton btnAnnuler;
 	
 	private JLabel labAffichage;
+	private JLabel labFormation;
+	private JComboBox jcb1;
 	
 	public Fenetre(){
 		this.setTitle("Informations Etudiant");
@@ -58,35 +63,47 @@ public class Fenetre extends JFrame{
 		pan3.add(labAge,BorderLayout.WEST);
 		pan3.add(champAge,BorderLayout.EAST);
 		
-		JPanel top = new JPanel();
-		top.setLayout(new BorderLayout());
-		top.add(pan1,BorderLayout.NORTH);
-		top.add(pan2,BorderLayout.CENTER);
-		top.add(pan3,BorderLayout.SOUTH);
-		
 		JPanel pan4 = new JPanel();
+		pan4.setLayout(new BorderLayout());
+		labFormation = new JLabel("Choisissez votre Formation : ");
+		jcb1 = new JComboBox();
+		jcb1.addItem("");
+		for(Formation form : Formation.values()){
+			jcb1.addItem(form);
+		}
+		pan4.add(labFormation,BorderLayout.WEST);
+		pan4.add(jcb1, BorderLayout.EAST);
+		
+		JPanel top = new JPanel();
+		top.setLayout(new GridLayout(4,1));
+		top.add(pan1);
+		top.add(pan2);
+		top.add(pan3);
+		top.add(pan4);
+		
+		JPanel pan5 = new JPanel();
 		btnValider = new JButton("VALIDER");
 		btnAnnuler = new JButton("ANNULER");
 		btnValider.addActionListener(new Validation());
 		btnAnnuler.addActionListener(new Annulation());
-		pan4.add(btnValider);
-		pan4.add(btnAnnuler);
+		pan5.add(btnValider);
+		pan5.add(btnAnnuler);
 		
-		JPanel pan5 = new JPanel();
-		pan5.setBorder(BorderFactory.createTitledBorder("AFFICHAGE"));
-		pan5.setPreferredSize(new Dimension(200,100));
+		JPanel pan6 = new JPanel();
+		pan6.setBorder(BorderFactory.createTitledBorder("AFFICHAGE"));
+		pan6.setPreferredSize(new Dimension(200,100));
 		labAffichage = new JLabel();
 		labAffichage.setForeground(Color.blue);
-		pan5.add(labAffichage);
+		pan6.add(labAffichage);
 
 		JPanel mypanel = new JPanel();
 		mypanel.setLayout(new BorderLayout());
 		mypanel.add(top,BorderLayout.NORTH);
-		mypanel.add(pan4,BorderLayout.CENTER);
-		mypanel.add(pan5,BorderLayout.SOUTH);
+		mypanel.add(pan5,BorderLayout.CENTER);
+		mypanel.add(pan6,BorderLayout.SOUTH);
 		
 		this.setContentPane(mypanel);
-		this.setVisible(true);
+		this.setVisible(true)
 	}
 	
 	//classe interne gérant le fait de cliquer sur le bouton VALIDER
