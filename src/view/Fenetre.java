@@ -103,7 +103,7 @@ public class Fenetre extends JFrame{
 		mypanel.add(pan6,BorderLayout.SOUTH);
 		
 		this.setContentPane(mypanel);
-		this.setVisible(true)
+		this.setVisible(true);
 	}
 	
 	//classe interne gérant le fait de cliquer sur le bouton VALIDER
