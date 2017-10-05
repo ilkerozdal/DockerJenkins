@@ -39,14 +39,7 @@ public class Etudiant {
 	
 	@Override
 	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("PRENOM : "+this.prenom);
-		sb.append("\n");
-		sb.append("NOM : "+this.nom);
-		sb.append("\n");
-		sb.append("AGE : "+this.age);
-		String var = sb.toString();
-		System.out.println(var);
+		String var ="PRENOM = "+this.prenom+" NOM = "+this.nom+" AGE = "+this.age;
 		return var;
 	}
 }
