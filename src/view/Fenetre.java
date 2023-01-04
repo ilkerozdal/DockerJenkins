@@ -44,7 +44,7 @@ public class Fenetre extends JFrame{
 		
 		JPanel pan1 = new JPanel();
 		pan1.setLayout(new BorderLayout());
-		labPrenom = new JLabel("Donnez votre Prénom : ");
+		labPrenom = new JLabel("Donnez votre Prnom : ");
 		champPrenom = new JTextField(30);
 		pan1.add(labPrenom,BorderLayout.WEST);
 		pan1.add(champPrenom,BorderLayout.EAST);
@@ -58,7 +58,7 @@ public class Fenetre extends JFrame{
 		
 		JPanel pan3 = new JPanel();
 		pan3.setLayout(new BorderLayout());
-		labAge = new JLabel("Entrez votre âge : ");
+		labAge = new JLabel("Entrez votre ge : ");
 		champAge = new JTextField(10);
 		pan3.add(labAge,BorderLayout.WEST);
 		pan3.add(champAge,BorderLayout.EAST);
@@ -106,7 +106,7 @@ public class Fenetre extends JFrame{
 		this.setVisible(true);
 	}
 	
-	//classe interne gérant le fait de cliquer sur le bouton VALIDER
+	//classe interne gï¿½rant le fait de cliquer sur le bouton VALIDER
 	class Validation implements ActionListener {
 		public void actionPerformed(ActionEvent e){
 			if(!champPrenom.getText().equals("") && 
@@ -127,7 +127,7 @@ public class Fenetre extends JFrame{
 		}
 	}
 	
-	//classe interne gérant le fait de cliquer sur le bouton ANNULER
+	//classe interne gï¿½rant le fait de cliquer sur le bouton ANNULER
 	class Annulation implements ActionListener {
 		public void actionPerformed(ActionEvent e){
 			champPrenom.setText("");

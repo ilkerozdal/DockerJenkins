@@ -2,7 +2,7 @@ package model;
 
 public enum Formation {
 	Informatique,
-	Mathématiques,
+	Mathmatiques,
 	Physique,
 	Droit,
 	Economie;
